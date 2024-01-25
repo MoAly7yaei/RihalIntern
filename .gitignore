@@ -1,1 +1,3 @@
-.idea/inspectionProfiles/profiles_settings.xml
+stage_one/
+*pyc
+*csv
