@@ -56,45 +56,23 @@ class DataEngineering:
         
         return ' '.join(filtered_text) 
 
-    
+
     def fit(data):
-        X,y = DataEngineering.feature_selection(data)
-        X = X.toarray()
-        y = y.toarray()
         temp = []
-        for text in X:
-            text = text.lower()
-            temp.append(text)
-        X = temp
-        temp = []
-        for text in X:
-            text = DataEngineering.text_filteration(text)
-            temp.append(text)
-        X = temp
-        temp = []
-        for text in X:
-            text = DataEngineering.stopword_exclude(text)
-            temp.append(text)
-        X = temp
-        temp = []
+        for text in data['text']:
+            temp.append(DataEngineering.process(text))
+        
+        data['text'] = temp
+        return data
 
-        X = tokenizer.transform(X)
-        X = pd.Series(X)
-        y = pd.Series(y)
-
-        return X,y
     
-    def transform(text):
+    def process(text):
         text = str(text)
         text = text.lower()
         text = DataEngineering.text_filteration(text)
         text = DataEngineering.stopword_exclude(text)
-        text = tokenizer.transform(text)
+        text = tokenizer.transform(pd.Series(text))
         return text
-
-
-
-
 
     
 
@@ -107,9 +85,9 @@ class Model:
         return clf
 
     def predecion(input, clf = clf):
-        processed_input = DataEngineering.transform(input)
+        processed_input = DataEngineering.process(input)
         
-        return clf.predict(processed_input)
+        return clf.predict(processed_input)[0]
     
     
     
