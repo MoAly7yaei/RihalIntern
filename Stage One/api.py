@@ -10,5 +10,5 @@ async def predict(text: str):
     return {"prediction": "Stressed" if prediction == 1 else "Not Stressed"}
 
 
-if __name__ == '__api__':
+def __init__():
     uvicorn.run(app)
