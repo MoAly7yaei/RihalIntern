@@ -3,4 +3,9 @@ training/
 *pyc
 *csv
 *png
+Stage One/rihal/
+Stage One/models/
+tokenizers/
 rihal/
+Stage One/models/
+Stage One/tokenizers/
