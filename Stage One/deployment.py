@@ -23,14 +23,15 @@ class DataEngineering:
 
 
     
-    def text_filteration(text = data['text']):
+    def text_filteration(text):
         filtered_text = ''
         for char in text:
-            if char not in ['/', '%', '&', '#', '@','.',',']: 
+            if char not in ['/', '%', '&', '#', '@','.',',','(',')','!','"',"'",':',';','/','{','}','[',']','+','=','-','*']: 
                 filtered_text += char
 
         return filtered_text
     
+
     def string_processing(text):
         if text is str:
             text = DataEngineering.text_filteration(text)
@@ -88,6 +89,8 @@ class Model:
         processed_input = DataEngineering.process(input)
         
         return clf.predict(processed_input)[0]
+    
+    
     
     
     
