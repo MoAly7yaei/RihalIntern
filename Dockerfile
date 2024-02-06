@@ -8,3 +8,4 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
+# CMD ["cd Stress Detection", "run.bat"]
