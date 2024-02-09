@@ -10,3 +10,4 @@ rihal/
 .venv/
 Stage One/models/
 Stage One/tokenizers/
+gpt4all/models
