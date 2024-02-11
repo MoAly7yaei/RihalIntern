@@ -11,3 +11,4 @@ rihal/
 Stage One/models/
 Stage One/tokenizers/
 gpt4all/models
+.idea/
