@@ -8,15 +8,15 @@ class Model:
             self.model_path = os.getcwd() + "/models"
         except:
             os.makedir(os.getcwd() + "/models")
-        self.n_ctx = 4096
+        self.n_ctx = 2048
         self.model = GPT4All(self.model_name, self.model_path, n_ctx=self.n_ctx)
-        self.temp = 0.8
+        self.temp = 0.3
         self.n_batch = 16
         self.output_list = []
 
     def generate(self, input):
         input = str(input)
-        output = self.model.generate(input, max_tokens=100000, temp=self.temp, n_batch=self.n_batch)
+        output = self.model.generate(input, max_tokens=1000, temp=self.temp, n_batch=self.n_batch)
         return output
     
     def build_context(output_list):
@@ -26,7 +26,7 @@ class Model:
             context += 'the conclusion is:\n'
             return str(context)
         else:
-            return 'You are an assistance that you are able to help of prompt that is been given to you and you will going to find the words that is suitable for the following prompts. Please Help me in the following\n'
+            return 'You are an assistance that you are able to looking for Informations of prompt that is been given to you and you will going to find the words that is suitable for the following prompts. Please Help me in the following\n'
 
     def chat(self, input):
         self.output_list.append(str(input))
