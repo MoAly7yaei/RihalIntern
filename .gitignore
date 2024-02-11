@@ -7,5 +7,7 @@ Stage One/rihal/
 Stage One/models/
 tokenizers/
 rihal/
+.venv/
 Stage One/models/
 Stage One/tokenizers/
+gpt4all/models
