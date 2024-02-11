@@ -7,11 +7,11 @@ import os
 
 
 PATH = os.getcwd()
-DATA_PATH = PATH + '\\Data\\'
-MODELS_PATH = PATH + '\\models\\'
-TOKENIZERS_PATH = PATH + '\\tokenizers\\'
+DATA_PATH = PATH + '/Data/'
+MODELS_PATH = PATH + '/models/'
+TOKENIZERS_PATH = PATH + '/tokenizers/'
 
-stopwordsfile = open(PATH + '\\Data\\english', "r")
+stopwordsfile = open(PATH + '/Data/english', "r")
 stopwords = stopwordsfile.read()
 data = pd.read_csv(DATA_PATH + 'stress.csv')
 tokenizer = load(TOKENIZERS_PATH + 'tfidf_vectorizer.joblib')
