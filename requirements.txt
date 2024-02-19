@@ -6,6 +6,8 @@ seaborn
 fastapi
 uvicorn
 torch
+torchvision
+torchaudio
 streamlit
 openai
 tensorflow
