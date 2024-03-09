@@ -12,3 +12,5 @@ streamlit
 openai
 tensorflow
 gpt4all
+datasets
+datasets
